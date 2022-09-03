@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Image, Platform } from "react-native";
 import RepositoryStats from "./RepositoryStats";
 import StyledText from "./StyledText";
 
@@ -43,7 +43,11 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 10,
     textAlign: "center",
-    backgroundColor: "#749ec2",
+    backgroundColor: Platform.select({
+      android: "#749ec2",
+      ios: "red",
+      default: "purple",
+    }),
   },
   textSection: {
     justifyContent: "space-between",
@@ -53,8 +57,6 @@ const styles = StyleSheet.create({
     textAlign: "justify",
   },
   stats: {
-    // borderBottomColor: "red",
-    // borderWidth: 1,
     flexDirection: "row",
     justifyContent: "space-evenly",
   },

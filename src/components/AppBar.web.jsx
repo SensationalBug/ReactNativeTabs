@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   View,
   StatusBar,
@@ -27,10 +27,10 @@ const AppBar = () => {
 
   return (
     <View style={styles.nav}>
-      <StatusBar barStyle={"auto"} backgroundColor="#749ec2" />
+      <StatusBar barStyle={"default"} backgroundColor="red" />
       <ScrollView style={styles.scrollView} horizontal={true}>
-        <AppBarTab to="/">Home</AppBarTab>
-        <AppBarTab to="/signin">SignIn</AppBarTab>
+        <AppBarTab to="/">SignIn</AppBarTab>
+        <AppBarTab to="/home">Home</AppBarTab>
         <AppBarTab to="/tab3">Tab 3</AppBarTab>
         <AppBarTab to="/tab4">Tab 4</AppBarTab>
         <AppBarTab to="/tab5">Tab 5</AppBarTab>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#aaa",
-    backgroundColor: "#749ec2",
+    backgroundColor: "red",
   },
 });
 

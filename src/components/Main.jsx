@@ -1,19 +1,23 @@
 import React from "react";
-import AppBar from "./Appbar.jsx";
+import AppBar from "./Appbar";
 import RepositoryList from "./RepositoryList.jsx";
 import { Route, Routes } from "react-router-native";
 import { View, StyleSheet, Text } from "react-native";
+import Login from "./Login";
+
+// Forma para cargar componentes para diferentes plataformas
+// Se recomienda hacerlo para librerias
+// const AppBar = Platform.select({
+//   web: () => require("./WebAppBar.jsx").default,
+//   default: () => require("./Appbar.jsx").default,
+// })();
 
 const Main = () => {
   return (
     <View style={styles.container}>
       <Routes>
-        <Route path="/" element={<RepositoryList />} exact></Route>
-        <Route
-          exact
-          path="/signin"
-          element={<Text style={{ flex: 1 }}>Working on it 2!!!</Text>}
-        />
+        <Route exact path="/" element={<Login />} />
+        <Route exact path="/home" element={<RepositoryList />}></Route>
         <Route
           exact
           path="/tab3"
